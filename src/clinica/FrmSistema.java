@@ -16,9 +16,10 @@ import miselaneos.imagenes;
 
 public class FrmSistema extends javax.swing.JFrame {
 
-    public static Iconos iconos = new Iconos(); //Declaro public y static para poder acceder luego desde cualquier lugar del proyecto en cualquier objeto
+    // Declaración de objetos estáticos para acceder desde cualquier parte del proyecto
+    public static Iconos iconos = new Iconos();
     public static imagenes imgs = new imagenes();
-    public static Fecha Fe = new Fecha(); //Misma situacion que Iconos    
+    public static Fecha Fe = new Fecha();
     private GUI gui;
 
     /**
@@ -30,20 +31,23 @@ public class FrmSistema extends javax.swing.JFrame {
         gui = new GUI();
     }
 
+    // Método para cargar la ventana de Obra Social
     private void loadObraSocial() {
         gui.loadObraSocial(FrmObraSocial.id, true);
     }
 
+    // Método para cargar la ventana de Pacientes
     private void loadPacientes() {
         gui.loadPacientes(FrmPacientes.id, true);
     }
 
+    // Método para cargar la ventana de Especialidades
     private void loadEspecialidades() {
         gui.loadEspecialidades(FrmEspecialidades.id, true);
     }
 
     /**
-     * Metodo para salir del sistema
+     * Método para salir del sistema
      */
     private void salirSistema() {
         if (JOptionPane.showConfirmDialog(null, "Desea Salir del Sistema por Completo.", "ATENCIÓN!!!", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
@@ -186,95 +190,3 @@ public class FrmSistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        salirSistema();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        salirSistema();
-    }//GEN-LAST:event_btnExitActionPerformed
-
-    private void jMenuIObraSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuIObraSocialActionPerformed
-        loadObraSocial();
-    }//GEN-LAST:event_jMenuIObraSocialActionPerformed
-
-    private void jMenuArchivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuArchivosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuArchivosActionPerformed
-
-    private void btnObraSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObraSocialActionPerformed
-        loadObraSocial();
-    }//GEN-LAST:event_btnObraSocialActionPerformed
-
-    private void jMenuPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuPacientesActionPerformed
-        loadPacientes();
-    }//GEN-LAST:event_jMenuPacientesActionPerformed
-
-    private void btnClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientActionPerformed
-        loadPacientes();
-    }//GEN-LAST:event_btnClientActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        loadEspecialidades();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void btnNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotaActionPerformed
-        String msj1 = "Modulo CRUD de Especialidades(3 puntos)\n" +
-                      "Modulo CRUD de Obra Social(3 puntos)\n" +
-                      "Modulo CRUD de Pacientes(4 puntos)\n" +
-                      "Nota : 10 puntos";
-        
-        JOptionPane.showMessageDialog(btnNota, msj1, "Información", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_btnNotaActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmSistema().setVisible(true);
-            }
-        });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private botones.BtnClient btnClient;
-    private botones.BtnExit btnExit;
-    private javax.swing.JButton btnNota;
-    private botones.BtnObraSocial btnObraSocial;
-    public static miselaneos.JDeskTopSis jDeskTopSis;
-    private javax.swing.JMenu jMenuArchivos;
-    private javax.swing.JMenuBar jMenuBar;
-    private javax.swing.JMenuItem jMenuIObraSocial;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuPacientes;
-    private javax.swing.JMenu jMenuSalir;
-    private javax.swing.JToolBar jToolBarButtons;
-    // End of variables declaration//GEN-END:variables
-
-}
